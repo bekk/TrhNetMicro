@@ -1,0 +1,13 @@
+﻿@model KundeGUI.Models.NewUserViewModel
+
+<h2>Ny bruker</h2>
+
+@using (Html.BeginForm("NewUser", "Home")) {
+    @Html.EditorForModel()
+
+
+    <button type="submit">Legg til</button>
+
+    @Html.ValidationSummary()
+}
+

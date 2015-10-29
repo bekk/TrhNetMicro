@@ -1,0 +1,29 @@
+{
+  "siteName": {
+    "value": "trhnetmicro-gui"
+  },
+  "hostingPlanName": {
+    "value": "AppService"
+  },
+  "siteLocation": {
+    "value": "West Europe"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "siteMode": {
+    "value": "Limited"
+  },
+  "computeMode": {
+    "value": "0"
+  },
+  "subscriptionId": {
+    "value": "0d60de30-59ab-484b-b845-244c39b366ce"
+  },
+  "resourceGroup": {
+    "value": "TRH-Net-Micro"
+  }
+}

@@ -26,13 +26,16 @@ namespace KundeWeb.Controllers
         }
 
         // POST api/values
-        public void Post(string forNavn, string etterNavn, string adresse)
+        public Kunde Post(string forNavn, string etterNavn, string adresse)
         {
             var kunde = Context.Kunder.Create();
             kunde.ForNavn = forNavn;
             kunde.EtterNavn = etterNavn;
             kunde.Adresse = adresse;
+            Context.Kunder.Add(kunde);
             Context.SaveChanges();
+
+            return kunde;
         }
     }
 }
