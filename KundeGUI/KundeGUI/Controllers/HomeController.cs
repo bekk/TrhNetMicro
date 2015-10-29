@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using Flurl.Http;
 using KundeGUI.Models;
 
 namespace KundeGUI.Controllers
@@ -35,14 +35,28 @@ namespace KundeGUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult NewUser(NewUserViewModel model)
+        public async Task<ActionResult> NewUser(NewUserViewModel model)
         {
             if (!ModelState.IsValid)
                 return View(model);
 
+            var kunde = await "http://trhnetmicro-kunde.azurewebsites.net/Kunde"
+                .PostJsonAsync(model)
+                .ReceiveJson<Kunde>();
 
+            try {
+                await "http://abonnement.azurewebsites.net/api/abonnement"
+                    .PostJsonAsync(new {
+                        KundeId = kunde.Id,
+                        Start = DateTimeOffset.Now,
+                        Stopp = DateTimeOffset.Now
+                    });
+            } catch (Exception) {
+                
+                throw;
+            }
 
-            return RedirectToAction("Takk");
+            return RedirectToAction("Takk", kunde);
         }
 
         public ActionResult Takk()
