@@ -14,30 +14,24 @@ namespace KundeWeb.Controllers
         public KundeContext Context { get; set; }
 
         // GET api/values
-        public IEnumerable<KundeData.Kunde> Get()
+        public IEnumerable<Kunde> Get()
         {
             return Context.Kunder;
         }
 
         // GET api/values/5
-        public KundeData.Kunde Get(int id)
+        public Kunde Get(int id)
         {
             return Context.Kunder.Find(id);
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
+        public void Post([FromBody] string value) {}
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        public void Put(int id, [FromBody] string value) {}
 
         // DELETE api/values/5
-        public void Delete(int id)
-        {
-        }
+        public void Delete(int id) {}
     }
 }
