@@ -1,9 +1,9 @@
 ﻿using System.Data.Entity;
 
-namespace Kunde.Data
+namespace KundeData
 {
     public class KundeContext : DbContext
     {
-        DbSet<Kunde> Kunder { get; set; }
+        public DbSet<Kunde> Kunder { get; set; }
     }
 }

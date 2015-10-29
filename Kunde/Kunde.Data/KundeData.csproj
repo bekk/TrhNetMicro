@@ -7,8 +7,8 @@
     <ProjectGuid>{79B10088-7ECE-487E-B104-5F3E0EB3C08A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Kunde.Data</RootNamespace>
-    <AssemblyName>Kunde.Data</AssemblyName>
+    <RootNamespace>KundeData</RootNamespace>
+    <AssemblyName>KundeData</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

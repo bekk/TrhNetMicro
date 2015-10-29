@@ -1,6 +1,6 @@
 using System.Data.Entity.Migrations;
 
-namespace Kunde.Data.Migrations
+namespace KundeData.Migrations
 {
     internal sealed class Configuration : DbMigrationsConfiguration<KundeContext>
     {
