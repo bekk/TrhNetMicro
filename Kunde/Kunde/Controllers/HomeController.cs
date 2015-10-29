@@ -6,6 +6,7 @@ namespace KundeWeb.Controllers
     {
         public ActionResult Index()
         {
+            return Redirect("swagger");
             ViewBag.Title = "Home Page";
 
             return View();

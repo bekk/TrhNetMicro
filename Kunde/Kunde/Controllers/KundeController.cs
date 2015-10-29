@@ -26,12 +26,13 @@ namespace KundeWeb.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody] string value) {}
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody] string value) {}
-
-        // DELETE api/values/5
-        public void Delete(int id) {}
+        public void Post(string forNavn, string etterNavn, string adresse)
+        {
+            var kunde = Context.Kunder.Create();
+            kunde.ForNavn = forNavn;
+            kunde.EtterNavn = etterNavn;
+            kunde.Adresse = adresse;
+            Context.SaveChanges();
+        }
     }
 }
