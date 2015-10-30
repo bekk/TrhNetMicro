@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Microsoft.ApplicationInsights;
 
 namespace KundeWeb
 {
@@ -14,6 +15,15 @@ namespace KundeWeb
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        protected void Application_Error()
+        {
+            var exception = Server.GetLastError();
+
+            var telemetryClient = new TelemetryClient();
+
+            telemetryClient.TrackException(exception);
         }
     }
 }

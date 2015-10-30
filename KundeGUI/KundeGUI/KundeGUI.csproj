@@ -201,6 +201,7 @@
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Home\NewUser.cshtml" />
     <Content Include="Views\Home\Takk.cshtml" />
+    <Content Include="Views\Home\Oversikt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

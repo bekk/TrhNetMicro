@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using KundeData;
+using KundeWeb.Models;
 
 namespace KundeWeb.Controllers
 {
@@ -26,15 +27,14 @@ namespace KundeWeb.Controllers
         }
 
         // POST api/values
-        public Kunde Post(string forNavn, string etterNavn, string adresse)
+        public Kunde Post(NyKundeBindingModel model)
         {
             var kunde = Context.Kunder.Create();
-            kunde.ForNavn = forNavn;
-            kunde.EtterNavn = etterNavn;
-            kunde.Adresse = adresse;
+            kunde.ForNavn = model.ForNavn;
+            kunde.EtterNavn = model.EtterNavn;
+            kunde.Adresse = model.Adresse;
             Context.Kunder.Add(kunde);
             Context.SaveChanges();
-
             return kunde;
         }
     }
